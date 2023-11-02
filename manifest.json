@@ -1,24 +1,21 @@
-//manifest version 
-//name 
-//version
-
-//link to our js file 
 
 {
     "manifest_version": 3,
     "name": "thon",
     "version": "1.0", 
     "description": "hackathon project",
+    "host_permissions": ["https://*/*"],
     "content_scripts": [
         {
-          "matches": ["<all_urls>"],
-          "js": ["app.js", "background.js"],
+          "matches": ["http://*/*", "https://*/*, <all_urls>"],
+          "js": ["app.js"],
           "css": ["style.css"]
         }
       ],
       "action": {
         "default_popup": "index.html"
       }, 
-      "permissions": ["<all_urls>", "tabs", "activeTab", "downloads"]
-  }
+      "background": {},
+      "permissions": ["tabs", "activeTab", "downloads", "scripting"]
+}
   
